@@ -67,5 +67,9 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     implementation ("androidx.navigation:navigation-compose:2.5.3")
+    implementation ("androidx.compose.ui:ui-text-google-fonts:1.5.0")
+
+    implementation ("androidx.compose.material:material-icons-core:1.7.5") // Core icons
+    implementation ("androidx.compose.material:material-icons-extended:1.7.5") // Extended icons
 
 }

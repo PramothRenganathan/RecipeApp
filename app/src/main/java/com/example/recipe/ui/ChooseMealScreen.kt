@@ -2,13 +2,17 @@ package com.example.recipe.ui
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -34,6 +38,7 @@ fun ChooseMealScreen(navController: NavController) {
                 .padding(20.dp)
         ) {
             Text(text = "Choose Your Meal")
+            Spacer(modifier = Modifier.height(45.dp))
             selectionBox("BreakFast")
             selectionBox("Lunch")
             selectionBox("Dinner")
@@ -63,14 +68,20 @@ fun ChooseMealScreen(navController: NavController) {
 
 @Composable
 fun selectionBox(boxName: String){
-    Box (modifier = Modifier
-        .size(150.dp)
-        .padding(5.dp)
-        .border(BorderStroke(2.dp, Color.DarkGray)),
-        contentAlignment = Alignment.Center
 
+    Card (modifier = Modifier
+        .size(150.dp)
+        .padding(5.dp),
+        shape = RoundedCornerShape(15.dp),
+        border = BorderStroke(2.dp, Color.DarkGray),
+        elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)
 
     ){
-        Text(text = boxName)
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            Text(text = boxName)
+        }
     }
 }

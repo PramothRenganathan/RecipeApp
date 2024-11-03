@@ -25,7 +25,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 
@@ -38,10 +37,6 @@ fun IngredientScreen(navController: NavController){
         val ingredientsList = remember {
             mutableStateListOf<String>()
         }
-
-        var textFieldValue by remember {
-            mutableStateOf("")
-        }
         
         Column(
             modifier = Modifier
@@ -49,26 +44,8 @@ fun IngredientScreen(navController: NavController){
             verticalArrangement = Arrangement.SpaceAround,
             horizontalAlignment = Alignment.Start
         ) {
-            IngredientsTopPart()
+//            IngredientsTopPart()
 
-            Divider(thickness = 3.dp, color = Color.Black)
-
-            Row(modifier = Modifier
-                .fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.Start){
-
-                TextField(value = textFieldValue,
-                    onValueChange = {
-                        textFieldValue = it
-                    }
-                )
-
-                Button(onClick = { ingredientsList.add(textFieldValue) }) {
-                    Text(text = "submit")
-                }
-            }
-            
             IngredientsBottomPart(ingredientsList)
 
             NextButton(navController = navController, route = "time")
@@ -131,7 +108,7 @@ fun IngredientsTopPart() {
 fun IngredientsBottomPart(ingredients: MutableList<String>) {
     Box(modifier = Modifier
         .fillMaxWidth()
-        .fillMaxHeight(0.6f)) {
+        .fillMaxHeight(0.9f)) {
 
         Log.d("abcdxx", "here "+ingredients.size)
         var ingredientsString = ""
@@ -140,5 +117,36 @@ fun IngredientsBottomPart(ingredients: MutableList<String>) {
         }
         Text(text = "Ingredient= $ingredientsString")
 
+        IngredientsSubmitText(ingredients)
+    }
+}
+
+@Composable
+fun IngredientsSubmitText(ingredients: MutableList<String>) {
+
+    var textFieldValue by remember {
+        mutableStateOf("")
+    }
+
+    Row(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp), // Optional padding for better layout
+        verticalAlignment = Alignment.Bottom,
+        horizontalArrangement = Arrangement.Start
+    ) {
+        TextField(
+            value = textFieldValue,
+            onValueChange = {
+                textFieldValue = it
+            },
+            modifier = Modifier
+                .weight(1f) // Takes up remaining space within the Row
+                .padding(end = 8.dp) // Spacing between TextField and Button
+        )
+
+        Button(onClick = { ingredients.add(textFieldValue) }) {
+            Text(text = "Submit")
+        }
     }
 }
