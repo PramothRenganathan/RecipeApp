@@ -1,4 +1,4 @@
-package com.example.recipe.ui
+package com.example.recipe.presentation.choose_time
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -17,6 +17,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.recipe.presentation.common.NextButton
 
 @Composable
 fun TimeScreen(navController: NavController){

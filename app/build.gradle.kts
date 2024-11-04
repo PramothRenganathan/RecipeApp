@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
+    id ("dagger.hilt.android.plugin")
 }
 
 android {
@@ -71,5 +73,11 @@ dependencies {
 
     implementation ("androidx.compose.material:material-icons-core:1.7.5") // Core icons
     implementation ("androidx.compose.material:material-icons-extended:1.7.5") // Extended icons
+
+    //Dagger - Hilt
+    implementation ("com.google.dagger:hilt-android:2.51")
+    kapt ("com.google.dagger:hilt-android-compiler:2.51")
+    kapt ("androidx.hilt:hilt-compiler:1.2.0")
+    implementation ("androidx.hilt:hilt-navigation-compose:1.0.0")
 
 }

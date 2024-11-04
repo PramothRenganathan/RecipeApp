@@ -1,4 +1,4 @@
-package com.example.recipe.ui
+package com.example.recipe.presentation.choose_Ingredients
 
 import android.content.Intent
 import android.os.Bundle
@@ -40,6 +40,7 @@ import androidx.compose.ui.input.pointer.pointerInteropFilter
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.recipe.presentation.common.NextButton
 
 @Composable
 fun IngredientScreen(navController: NavController) {

@@ -1,4 +1,4 @@
-package com.example.recipe.ui
+package com.example.recipe.presentation.common
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth

@@ -1,4 +1,4 @@
-package com.example.recipe.ui
+package com.example.recipe.presentation
 
 import android.Manifest
 import android.content.pm.PackageManager
@@ -21,7 +21,12 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.recipe.ui.theme.AppTheme
+import com.example.recipe.presentation.choose_Ingredients.IngredientScreen
+import com.example.recipe.presentation.choose_meal.ChooseMealScreen
+import com.example.recipe.presentation.choose_time.TimeScreen
+import com.example.recipe.presentation.instructions.ResultScreen
+import com.example.recipe.presentation.theme.AppTheme
+import com.example.recipe.presentation.viewmodel.Screen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,22 +73,20 @@ class MainActivity : ComponentActivity() {
 fun MyAppNavHost() {
     val navController = rememberNavController()
     
-    NavHost(navController = navController, startDestination ="splash" ){
-        composable("splash") {
+    NavHost(navController = navController, startDestination = Screen.ShowSplash.route ){
+        composable(Screen.ShowSplash.route) {
             SplashScreen(navController)
-//            RecordAudioScreen()
-//            SpeechToTextScreen()
         }
-        composable("meal") {
+        composable(Screen.ChooseMealsScreen.route) {
             ChooseMealScreen(navController)
         }
-        composable("ingredients") {
+        composable(Screen.ChooseIngredients.route) {
             IngredientScreen(navController)
         }
-        composable("time") {
+        composable(Screen.ChooseTime.route) {
             TimeScreen(navController)
         }
-        composable("result") {
+        composable(Screen.ShowResult.route) {
             ResultScreen()
         }
     }

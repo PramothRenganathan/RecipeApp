@@ -1,4 +1,4 @@
-package com.example.recipe.ui
+package com.example.recipe.presentation.choose_meal
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
@@ -21,6 +21,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.recipe.presentation.common.NextButton
 
 @Composable
 fun ChooseMealScreen(navController: NavController) {
