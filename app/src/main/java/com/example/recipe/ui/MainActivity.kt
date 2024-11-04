@@ -81,7 +81,10 @@ fun MyAppNavHost() {
             IngredientScreen(navController)
         }
         composable("time") {
-            TimeScreen()
+            TimeScreen(navController)
+        }
+        composable("result") {
+            ResultScreen()
         }
     }
 }

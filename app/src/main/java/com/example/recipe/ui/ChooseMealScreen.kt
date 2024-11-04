@@ -24,8 +24,6 @@ import androidx.navigation.NavController
 
 @Composable
 fun ChooseMealScreen(navController: NavController) {
-
-    Text(text = "Main Screen")
     Box(modifier = Modifier
         .fillMaxSize()
         .background(MaterialTheme.colorScheme.primary)
@@ -37,31 +35,16 @@ fun ChooseMealScreen(navController: NavController) {
                 .fillMaxSize()
                 .padding(20.dp)
         ) {
-            Text(text = "Choose Your Meal")
+            Text(text = "Choose Your Meal",
+                style = MaterialTheme.typography.headlineMedium)
             Spacer(modifier = Modifier.height(45.dp))
             selectionBox("BreakFast")
             selectionBox("Lunch")
             selectionBox("Dinner")
+            NextButton(navController = navController, route = "ingredients")
         }
-    }
 
-    NextButton(navController = navController, route = "ingredients")
-//    Box(modifier = Modifier
-//        .fillMaxSize(),
-//        contentAlignment = Alignment.BottomCenter
-//    ){
-//        Button(modifier = Modifier
-//            .fillMaxWidth()
-//            .padding(12.dp),
-//
-//            onClick = {
-//                navController.navigate("ingredients")
-//            }
-//        ) {
-//
-//            Text(text = "Next ->")
-//        }
-//    }
+    }
 
 
 }
@@ -72,6 +55,7 @@ fun selectionBox(boxName: String){
     Card (modifier = Modifier
         .size(150.dp)
         .padding(5.dp),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primaryContainer), // Set the background color to green
         shape = RoundedCornerShape(15.dp),
         border = BorderStroke(2.dp, Color.DarkGray),
         elevation = CardDefaults.cardElevation(defaultElevation = 8.dp)

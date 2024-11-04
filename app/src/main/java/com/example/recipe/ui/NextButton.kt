@@ -1,7 +1,6 @@
 package com.example.recipe.ui
 
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
@@ -17,21 +16,20 @@ import androidx.navigation.NavController
 
 @Composable
     fun NextButton(navController: NavController, route:String){
-        Box(modifier = Modifier
-            .fillMaxSize(),
+        Box(modifier = Modifier,
             contentAlignment = Alignment.BottomCenter
         ){
             Button(modifier = Modifier
                 .fillMaxWidth()
                 .padding(30.dp),
                 colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primaryContainer), // Set the background color to green
-
-
                 onClick = {
                     navController.navigate(route)
                 }
             ) {
-                Text(text = "Next ->")
+                Text(text = "Next ->",
+                    style = MaterialTheme.typography.headlineSmall,
+                    )
             }
         }
     }

@@ -2,7 +2,7 @@ package com.example.recipe.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val primaryLight = Color(0xFFBEF58D)
+val primaryLight = Color(0xFF597A3B)
 val onPrimaryLight = Color(0xFFFFFFFF)
 val primaryContainerLight = Color(0xFF475739)
 val onPrimaryContainerLight = Color(0xFF0D2000)
@@ -110,7 +110,7 @@ val surfaceContainerLightHighContrast = Color(0xFFEDEFE4)
 val surfaceContainerHighLightHighContrast = Color(0xFFE7E9DE)
 val surfaceContainerHighestLightHighContrast = Color(0xFFE2E3D9)
 
-val primaryDark = Color(0xFFAED18D)
+val primaryDark = Color(0xFF7EA05C)
 val onPrimaryDark = Color(0xFF1C3703)
 val primaryContainerDark = Color(0xFF324E19)
 val onPrimaryContainerDark = Color(0xFFC9EEA7)
