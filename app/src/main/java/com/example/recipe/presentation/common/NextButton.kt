@@ -24,6 +24,7 @@ import androidx.navigation.NavController
                 .padding(30.dp),
                 colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primaryContainer), // Set the background color to green
                 onClick = {
+
                     navController.navigate(route)
                 }
             ) {

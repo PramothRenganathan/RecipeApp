@@ -1,4 +1,4 @@
-package com.example.recipe.presentation.viewmodel
+package com.example.recipe.presentation
 
 sealed class Screen(val route: String) {
     data object ShowSplash : Screen("Splash")

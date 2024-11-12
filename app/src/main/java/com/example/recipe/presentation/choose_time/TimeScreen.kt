@@ -18,9 +18,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.recipe.presentation.common.NextButton
+import com.example.recipe.presentation.viewmodel.SelectionViewModel
 
 @Composable
-fun TimeScreen(navController: NavController){
+fun TimeScreen(
+    navController: NavController,
+    selectionViewModel: SelectionViewModel
+) {
     Column (verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.Start,
         modifier = Modifier

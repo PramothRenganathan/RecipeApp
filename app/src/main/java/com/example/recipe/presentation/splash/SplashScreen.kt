@@ -1,4 +1,4 @@
-package com.example.recipe.presentation
+package com.example.recipe.presentation.splash
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

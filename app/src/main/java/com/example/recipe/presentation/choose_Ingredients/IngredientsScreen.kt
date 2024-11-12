@@ -41,9 +41,13 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.recipe.presentation.common.NextButton
+import com.example.recipe.presentation.viewmodel.SelectionViewModel
 
 @Composable
-fun IngredientScreen(navController: NavController) {
+fun IngredientScreen(
+    navController: NavController,
+    selectionViewModel: SelectionViewModel
+) {
     Box(modifier = Modifier.fillMaxSize(),
         ) {
         val ingredientsListFromTyping = remember { mutableStateOf("") }
